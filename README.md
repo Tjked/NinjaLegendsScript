@@ -1,0 +1,2 @@
+# NinjaLegendsScript
+RobloxScript
