@@ -1456,30 +1456,46 @@ game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(oh1,
 end
 end
 end)
- 
+
+
+local lastTeleport = 0
 -- Auto-Swing
 spawn(function()
-while wait() do
-if Farming.flags.Swing then
-if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
-game.Players.LocalPlayer.ninjaEvent:FireServer("swingKatana")
-else
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do 
-if v.ClassName == "Tool" and v:FindFirstChild("attackShurikenScript") then 
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-wait()
-if v.ClassName == "Tool" and v:FindFirstChild("attackKatanaScript") then 
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)                            
-end
-end
-end
-end
-end
-end
-end
+    while wait() do
+        if Farming.flags.Swing then
+            -- Constant Teleport Logic (Every 0.1 seconds)
+            if tick() - lastTeleport >= 0.1 then
+                local character = game.Players.LocalPlayer.Character
+                local hrp = character and character:FindFirstChild("HumanoidRootPart")
+                
+                if hrp then
+                    hrp.CFrame = CFrame.new(649, 40, 2407)
+                end
+                lastTeleport = tick()
+            end
+
+            -- Auto-Swing logic
+            if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+                if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
+                    game.Players.LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                else
+                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do 
+                        if v.ClassName == "Tool" and v:FindFirstChild("attackShurikenScript") then 
+                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                            wait()
+                            if v.ClassName == "Tool" and v:FindFirstChild("attackKatanaScript") then 
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)                            
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
 end)
- 
+
+
+
 -- Auto-Sell
 spawn(function()
 while wait(0.01) do
@@ -1754,7 +1770,7 @@ while wait(0.5) do
 if AutoBuy.flags.Skill then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
 local oh1 = "buyAllSkills"
-local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island"}
+local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island", "Blazing Vortex Island"}
 for i = 1,#oh2 do
 game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
 end
@@ -2125,7 +2141,4 @@ end)
 
 -- Credits
 local Credits = library:CreateWindow("Credits")
-Credits:Section("- UI by OG fulcrum -")
-Credits:Label("Mod Ideas by Wut.exe")  
-Credits:Label("Mods made by OG fulcrum")
-Credits:Label("Optimized by: Wut.exe")
+Credits:Section("- Script by OG Fulcrum -")
