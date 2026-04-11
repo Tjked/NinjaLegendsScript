@@ -1485,9 +1485,9 @@ spawn(function()
 while wait(0.01) do
 if Farming.flags.Sell then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-game.workspace.sellAreaCircles["sellAreaCircle17"].circleInner.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
+game.workspace.sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
 wait(.1)
-game.workspace.sellAreaCircles["sellAreaCircle17"].circleInner.CFrame = game.Workspace.Part.CFrame
+game.workspace.sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Workspace.Part.CFrame
 end
 end
 end
