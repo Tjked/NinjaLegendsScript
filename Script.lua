@@ -1485,9 +1485,9 @@ spawn(function()
 while wait(0.01) do
 if Farming.flags.Sell then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
+game.workspace.sellAreaCircles["sellAreaCircle17"].circleInner.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
 wait(.1)
-game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame = game.Workspace.Part.CFrame
+game.workspace.sellAreaCircles["sellAreaCircle17"].circleInner.CFrame = game.Workspace.Part.CFrame
 end
 end
 end
@@ -1724,7 +1724,7 @@ while wait(0.5) do
 if AutoBuy.flags.Sword then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
 local oh1 = "buyAllSwords"
-local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island"}
+local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island", "Blazing Vortex Island"}
 for i = 1,#oh2 do
 game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
 end
@@ -1739,7 +1739,7 @@ while wait(0.5) do
 if AutoBuy.flags.Belt then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
 local oh1 = "buyAllBelts"
-local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island"}
+local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island", "Blazing Vortex Island"}
 for i = 1,#oh2 do
 game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(oh1, oh2[i])
 end
@@ -2125,7 +2125,7 @@ end)
 
 -- Credits
 local Credits = library:CreateWindow("Credits")
-Credits:Section("- Script Remake By flanut -")
-Credits:Label("flanut")  
-Credits:Label("UI Base: Inori / Ririchi")
-Credits:Label("Optimized by: flanut")
+Credits:Section("- UI by OG fulcrum -")
+Credits:Label("Mod Ideas by Wut.exe")  
+Credits:Label("Mods made by OG fulcrum")
+Credits:Label("Optimized by: Wut.exe")
