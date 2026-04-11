@@ -1462,9 +1462,6 @@ spawn(function()
 while wait() do
 if Farming.flags.Swing then
 if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(648.365662, 38.704483, 2409.72266)
-end)
 if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
 game.Players.LocalPlayer.ninjaEvent:FireServer("swingKatana")
 else
@@ -1474,7 +1471,6 @@ game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 wait()
 if v.ClassName == "Tool" and v:FindFirstChild("attackKatanaScript") then 
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)                            
-end
 end
 end
 end
