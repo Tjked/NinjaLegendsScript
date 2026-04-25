@@ -1469,7 +1469,7 @@ spawn(function()
                 local hrp = character and character:FindFirstChild("HumanoidRootPart")
                 
                 if hrp then
-                    hrp.CFrame = CFrame.new(649, 40, 2407)
+                    hrp.CFrame = CFrame.new(338, 30384, -22)
                 end
                 lastTeleport = tick()
             end
