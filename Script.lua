@@ -1148,6 +1148,7 @@ local Unique = Pets:Toggle("Sell All Unique", {flag = "SUnique"})
 local Omega = Pets:Toggle("Sell All Omega", {flag = "SOmega"})
 local Elite = Pets:Toggle("Sell All Elite", {flag = "SElite"})
 local Infinity = Pets:Toggle("Sell All Infinity", {flag = "SInfinity"})
+local RisingHero = Pets:Toggle("Sell All RisingHero", {flag = "SRisingHero"})
 
 -- Misc
 local Misc = library:CreateWindow("Misc")
